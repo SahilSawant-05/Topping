@@ -1,0 +1,12 @@
+{
+  "name": "Lead Integration Topping",
+  "version": "1.0",
+  "widgets": [
+    {
+      "location": "module",
+      "module": "Contacts",
+      "name": "Lead Widget",
+      "url": "/index.html"
+    }
+  ]
+}
