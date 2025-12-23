@@ -1,12 +1,18 @@
+
 {
-  "name": "Lead Integration Topping",
-  "version": "1.0",
-  "widgets": [
+  "headers": [
     {
-      "location": "module",
-      "module": "Contacts",
-      "name": "Lead Widget",
-      "url": "/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://*.zoho.com"
+        }
+      ]
     }
   ]
 }
