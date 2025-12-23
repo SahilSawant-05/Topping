@@ -8,18 +8,6 @@
 //   test();
 // });
 
- ZOHO.embeddedApp.on("PageLoad", function(data){
-      console.log(data);
-    });
-
-    function getContact(){
-      ZOHO.CRM.API.getRecord({
-        Entity: "Contacts",
-        RecordID: 123456789
-      }).then(console.log);
-    }
-
-    ZOHO.embeddedApp.init();
 
 
 
