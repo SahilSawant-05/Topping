@@ -1,25 +1,26 @@
-// function test() {
-//   alert("Widget working!");
-// }
-
-// ZOHO.embeddedApp.init();
-
-// ZOHO.embeddedApp.on("PageLoad", function (data) {
-//   test();
-// });
-
-
-
-
-ZOHO.CRM.API.insertRecord({
-  Entity: "Contacts",
-  APIData: {
-    First_Name: "John",
-    Last_Name: "Doe",
-    Email: "john@test.com"
-  }
+// This runs when the widget loads inside Bigin
+ZOHO.embeddedApp.on("PageLoad", function (data) {
+  console.log("Page Load Data:", data);
 });
-ZOHO.CRM.CONNECTION.invoke("facebook_conn", {
-  url: "https://graph.facebook.com/v18.0/...",
-  method: "GET"
-});
+
+// Initialize the Bigin SDK (VERY IMPORTANT)
+ZOHO.embeddedApp.init();
+
+// Simple test
+function testSDK() {
+  alert("Bigin Topping is working!");
+}
+
+// Example: Fetch contacts from Bigin
+function getContacts() {
+  ZOHO.CRM.API.getAllRecords({
+    Entity: "Contacts",
+    per_page: 5,
+    page: 1
+  }).then(function (response) {
+    document.getElementById("output").textContent =
+      JSON.stringify(response, null, 2);
+  }).catch(function (error) {
+    console.error(error);
+  });
+}

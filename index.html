@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <title>Bigin Topping</title>
+
+  <!-- Zoho Bigin SDK -->
   <script src="https://js.zohostatic.com/zohocrm/v2.1/sdk.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Bigin Custom Topping</h2>
-  <button onclick="getContact()">Get Contact</button>
 
-  <script>
-    ZOHO.embeddedApp.on("PageLoad", function(data){
-      console.log(data);
-    });
+  <div class="container">
+    <h2>Facebook Lead Topping</h2>
 
-    function getContact(){
-      ZOHO.CRM.API.getRecord({
-        Entity: "Contacts",
-        RecordID: 123456789
-      }).then(console.log);
-    }
+    <button onclick="testSDK()">Test SDK</button>
+    <button onclick="getContacts()">Get Contacts</button>
 
-    ZOHO.embeddedApp.init();
-  </script>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
